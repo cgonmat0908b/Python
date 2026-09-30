@@ -31,4 +31,4 @@ match nota:
         print("Notable")
 
     case 9 | 10:
-        print("Sobresaliente")    
+        print("Sobresaliente")
