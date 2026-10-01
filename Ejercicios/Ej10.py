@@ -5,14 +5,19 @@ primos = 0
 
 if(num1 > num2):
     print("Error")
+
 else:
-    for i in range(num2,num1,-1):
-        for f in range(i, num1, -1):
-            if(f % i == 0):
+
+    for i in range(num2, (num1 - 1),-1):
+
+        for f in range(i, 0, -1):
+            if(i % f == 0):
                 contadorDivisibles += 1
 
             if(contadorDivisibles > 2):
                 break
-            else:
-                primos = f
-                
+
+        if(contadorDivisibles == 2):
+            print(i)
+        
+        contadorDivisibles = 0
