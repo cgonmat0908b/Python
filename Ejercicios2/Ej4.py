@@ -5,13 +5,15 @@ Mostrar dicha lista al acabar. Si el número introducido
 es menor que 0, mostrar un mensaje de error."""
 
 num = (int)(input("Introduce un número: "))
-acum = 0
 lista = [0,1]
 
 if num < 0:
     print("Error")
 else:
     for i in range(0,(num - 2)):
-        lista.append(lista[-1] + lista[-2])
+            lista.append(lista[-1] + lista[-2])
 
-print(lista)
+if num == 1:
+    print(lista[0])
+else:
+    print(lista)
