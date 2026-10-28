@@ -5,3 +5,5 @@ from listaJugadores import jugadores
 listaFiligranas = [f for j in jugadores for f in j["filigranas"]]
 
 print(listaFiligranas)
+
+
