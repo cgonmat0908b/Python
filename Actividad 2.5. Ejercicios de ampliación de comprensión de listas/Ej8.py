@@ -5,4 +5,4 @@ contrario.
 """
 from listaSeries import series
 
-lista = [(s["titulo"], "Obra maestra" if acum >= 9 else "Gran serie") for s in series acum /= contador acum = 0 contador = 0 for r in s["reseñas"]  acum += r["nota"] contador += 1]
+lista = [(s["titulo"], "Obra maestra" if sum(r["nota"]) / len(r["nota"]) >= 9 else "Gran serie") for s in series for r in s["reseñas"]]
