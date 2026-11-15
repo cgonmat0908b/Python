@@ -15,4 +15,27 @@ decimales, redondeando al valor más cercano.
 # floor() redondea hacia abajo, ceil() redondea hacia arriba
 
 
-def convertirTemperatura():
+def convertirTemperatura(tempEntrada, unidadEntrada, unidadConvertir):
+    unidadesValidas = ["C","K","F"]
+    tempFinal = 0
+
+    if unidadEntrada in unidadesValidas and unidadConvertir in unidadesValidas and unidadEntrada != unidadConvertir:
+        if unidadEntrada == "K":
+            tempCelsius = tempEntrada - 273.15
+        elif unidadEntrada == "F":
+            tempCelsius = (tempEntrada - 32) / 1.8
+        else:
+            tempCelsius = tempEntrada
+
+        if unidadConvertir == "C":
+            tempFinal = round(tempCelsius , 2)
+        elif unidadConvertir == "K":
+            tempFinal = round(tempCelsius + 273.15 , 2)
+        else:
+            tempFinal = round((tempCelsius * 1.8) + 3 , 2)
+    else:
+        return "Algún valor es invalido"
+
+    return f"{tempFinal:.2f}"
+
+print(convertirTemperatura(0.0,"C","K"))
