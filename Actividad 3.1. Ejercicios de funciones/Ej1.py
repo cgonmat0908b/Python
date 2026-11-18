@@ -13,6 +13,8 @@ Interior.
 # floor() redondea hacia abajo, ceil() redondea hacia arriba
 
 def comprobarLetraDNI():   
+
+
     dni = input("Introduce un DNI:")
     correcto = False
 
