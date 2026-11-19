@@ -24,3 +24,38 @@
 
 def cambiar_divisa(cantidadDinero : float, divisaActual : str, divisaCambio : str):
     
+    """
+        Función que dada una cantidad de dinero, la divisa en la que se encuentra y la divisa
+        a cambiar, realiza el cambio de valor.
+
+        Args:
+            cantidadDinero (float): Cantidad de dinero del usuario
+            divisaActual (str): Divisa actual del dinero del usuario
+            divisaCambio (str): Divisa en la que se desea el dinero
+
+        Returns:
+            float: Devuelve la moneda cambiada a la divisa seleccionada
+    """
+
+    divisas = ["euro","dolar","yen"]
+    
+    if  divisaActual.lower() not in divisas or divisaCambio.lower() not in divisas:
+        raise ValueError("Divisas invalidas")
+
+    euros = 0
+
+    if divisaActual == "dolar":
+        euros = cantidadDinero * 0.92
+    elif divisaActual == "yen":
+        euros = cantidadDinero * 0.0061
+    else:
+        euros = cantidadDinero
+
+    if divisaCambio == "dolar":
+        euros *= 1.09
+    elif divisaCambio == "yen":
+        euros *= 163.38
+
+    return euros
+
+print(cambiar_divisa(10,"dolar","yen"))
