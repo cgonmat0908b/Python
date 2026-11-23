@@ -22,7 +22,7 @@
 
 """
 
-def cambiar_divisa(cantidadDinero : float, divisaActual : str, divisaCambio : str):
+def cambiar_divisa(cantidadDinero : float, divisaActual : str, divisaCambio : str) -> float:
     
     """
         Función que dada una cantidad de dinero, la divisa en la que se encuentra y la divisa
@@ -56,6 +56,6 @@ def cambiar_divisa(cantidadDinero : float, divisaActual : str, divisaCambio : st
     elif divisaCambio == "yen":
         euros *= 163.38
 
-    return euros
+    return round(euros,3)
 
 print(cambiar_divisa(10,"dolar","yen"))
