@@ -2,7 +2,7 @@ def estadisticas(*num) -> list:
     mayor = max(num)
     menor = min(num)
     media = sum(num) / len(num)
-    return [mayor,menor,media]
+    return [mayor,menor,round(media,2)]
 
 
 resultado = estadisticas(1,2,3,4,5,5,5,5)
